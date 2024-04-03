@@ -52,8 +52,8 @@
 \definecolor{lightgrey}{HTML}{CFCFCF}
 \definecolor{infogrey-box}{RGB}{163,163,163}
 \definecolor{infogrey-bg}{RGB}{250,250,250}
-\definecolor{rqblue-box}{RGB}{103,188,223}
-\definecolor{rqblue-bg}{RGB}{247,252,253}
+\definecolor{objblue-box}{RGB}{103,188,223}
+\definecolor{objblue-bg}{RGB}{247,252,253}
 \newtcolorbox{infobox-pub}{
     breakable,
     enhanced,
@@ -139,21 +139,35 @@
      \end{tcbclipframe}
     }
 }
-\newtcolorbox{infobox-q}{
-    breakable,
+% \newtcolorbox{infobox-q}{
+%     breakable,
+%     enhanced,
+%     arc=1pt,
+%     top=2pt,
+%     bottom=2pt,
+%     left=2pt,
+%     right=2pt,
+%     colback=rqblue-bg,
+%     colframe=rqblue-box,
+%     coltext=black,
+%     leftrule=24pt,
+%     overlay={%
+%      \begin{tcbclipframe}
+%       \node[anchor=center, xshift=12pt, yshift=-10pt, text=rqblue-bg] at (frame.north west){\large\faQuestionCircle};
+%      \end{tcbclipframe}
+%     }
+% }
+\newtcolorbox{infobox-objective}{
+    %breakable,
     enhanced,
     arc=1pt,
-    top=2pt,
-    bottom=2pt,
-    left=2pt,
-    right=2pt,
-    colback=rqblue-bg,
-    colframe=rqblue-box,
+    colback=objblue-bg,
+    colframe=objblue-box,
     coltext=black,
-    leftrule=24pt,
+    leftrule=36pt,
     overlay={%
      \begin{tcbclipframe}
-      \node[anchor=center, xshift=12pt, yshift=-10pt, text=rqblue-bg] at (frame.north west){\large\faQuestionCircle};
+      \node[anchor=center, xshift=19pt, yshift=-18pt, text=objblue-bg] at (frame.north west){\Large\faCrosshairs};
      \end{tcbclipframe}
     }
 }
@@ -233,6 +247,7 @@
            \onslide<2> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_analogy_01}
            \onslide<3> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_analogy_02}
            \onslide<4> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_analogy_03}
+           % TODO: mby insert frame w/ sailor colleagues "discoveing" new islands
            \onslide<5> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_analogy_04}
        \end{overprint}
    \end{frame}
@@ -273,7 +288,7 @@
                \end{itemize}
        \end{columns}
    \end{overprint}
-    \vspace{2cm}
+    \vspace{1cm}
     \centering
    \only<3>{
         {\Large\textbf{better maps\footnote{Abstract representations of the real world} $\Rightarrow$ better decisions}}
@@ -285,9 +300,9 @@
         {\Large\textbf{our maps of science are insufficient\footnote{Used data sets are small, incomplete, noisy, etc.}}}
    }
    \only<6>{
-       \begin{infobox-q}
-       \Large\textbf{RQ} How can large-scale scholarly data be improved?
-       \end{infobox-q}
+       \begin{infobox-objective}
+       \Large\textbf{Research Objective}\\Develop methods for generating high-quality scholarly data.
+       \end{infobox-objective}
    }
    \end{frame}
 
@@ -320,20 +335,28 @@
        \end{overprint}
    \end{frame}
 
-   \begin{frame}{Quality Aspects}
+   \begin{frame}{Research Gap}
        \begin{overprint}
-           \onslide<1> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_x_x}
-           \onslide<2> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_0}
-           \onslide<3> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_1}
-           \onslide<4> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_0}
-           \onslide<5> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_1}
-           \onslide<6> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_0}
-           \onslide<7> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_1}
-           \onslide<8> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_0}
-           \onslide<9> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_1}
-           \onslide<10> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_0}
-           \onslide<11> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_1}
-           \onslide<12> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_2}
+           % TODO: visualize research gaps
+           \onslide<1> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_add_09}
+           % - Gap: Citation Network
+           % - Vis: Doc A to question mark
+           % - Importance: prevalent use cases hinge on cn
+           \onslide<2> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_add_09}
+           % - Gap: Anglocentrism
+           % - Vis: Doc 文 and refsecentry first 文字化け, then disappear
+           % - Importance: science is a global = multi-lingual endeavor
+           \onslide<3> \centering\includegraphics[width=0.55\textwidth]{imgs/schema_add_09}
+           % - Gap: Research Artifacts
+           % - Vis: Text bumps, blue highlights, cit param disappear
+           % - Importance: increasingly a research driver
+       \end{overprint}
+   \end{frame}
+
+   \begin{frame}[plain]
+       \begin{overprint}
+           % TODO: make stuff appear one by one, replace D_n's w/ icons
+           \onslide<1> \centering\includegraphics[width=\textwidth]{imgs/objective_dq_grid}
        \end{overprint}
    \end{frame}
 
@@ -409,7 +432,7 @@
                \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
-            \includegraphics[width=\linewidth]{imgs/contrib_overview_v1_sel}
+            \includegraphics[width=\linewidth]{imgs/contrib_overview_dis_var_sel}
    \end{columns}
    \end{frame}
 
@@ -1348,16 +1371,16 @@
 
    \begin{frame}[t]{Overall Conclusion}
 
-   \begin{infobox-q}
-   \Large\textbf{RQ} How can large-scale scholarly data be improved?
-   \end{infobox-q}
+   \begin{infobox-objective}
+   \Large\textbf{Research Objective}\\Develop methods for generating high-quality scholarly data.
+   \end{infobox-objective}
 
     \only<2>{
     \centering
     \Large like this:
 
     \vspace{0.3cm}
-    \includegraphics[width=0.47\linewidth]{imgs/contrib_overview_v1}
+    \includegraphics[width=0.47\linewidth]{imgs/contrib_overview_dis_var}
     }
 
     \only<3>{
@@ -1468,6 +1491,23 @@
         \textbf{Extra Slides}\\
         \end{Huge}
         \end{infobox-map}
+   \end{frame}
+
+   \begin{frame}{Quality Aspects}
+       \begin{overprint}
+           \onslide<1> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_x_x}
+           \onslide<2> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_0}
+           \onslide<3> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_1}
+           \onslide<4> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_0}
+           \onslide<5> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_1}
+           \onslide<6> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_0}
+           \onslide<7> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_1}
+           \onslide<8> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_0}
+           \onslide<9> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_1}
+           \onslide<10> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_0}
+           \onslide<11> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_1}
+           \onslide<12> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_2}
+       \end{overprint}
    \end{frame}
 
    \begin{frame}{Corpus - Stats}
