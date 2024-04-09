@@ -377,7 +377,6 @@
 
    \begin{frame}[plain]
        \begin{overprint}
-           % TODO: make stuff appear one by one, replace D_n's w/ icons
            \onslide<1> \centering\includegraphics[width=\textwidth]{imgs/objective_grid_and_contrib_0}
            \onslide<2> \centering\includegraphics[width=\textwidth]{imgs/objective_grid_and_contrib_1}
            \onslide<3> \centering\includegraphics[width=\textwidth]{imgs/objective_grid_and_contrib_2}
@@ -507,25 +506,40 @@
    \begin{columns}
        \column{.575\textwidth}
         \begin{itemize}
-            \item \textbf{Research gap}
-            \begin{itemize}
-                \item Corpus size
-                \item Data cleanliness
-                \item Reference linking
-            \end{itemize}
+            \item \textbf{Research Task}\\Develop a method for creating large-scale, high quality ``base corpus''
             \item \textbf{Approach}
             \begin{itemize}
-                \item Joint handling of text + references
                 \item Conversion of / IE from \LaTeX
-                \item Reference parsing + linking to MAG
+                \item Joint handling of text + references
+                \item Reference parsing + linking to metadata records
             \end{itemize}
             \item \textbf{Results}
             \begin{itemize}
-                \item Corpus creation methodology
-                \item More extensive, complete; less noisy data
-                \item Large corpus for further research
+                \item Corpus among 3 largest full-text corpora
+                \item More extensive, complete, less noisy data
+                \item State of the art reference linking
             \end{itemize}
         \end{itemize}
+        % \begin{itemize}
+        %     \item \textbf{Research gap}
+        %     \begin{itemize}
+        %         \item Corpus size
+        %         \item Data cleanliness
+        %         \item Reference linking
+        %     \end{itemize}
+        %     \item \textbf{Approach}
+        %     \begin{itemize}
+        %         \item Joint handling of text + references
+        %         \item Conversion of / IE from \LaTeX
+        %         \item Reference parsing + linking to metadata records
+        %     \end{itemize}
+        %     \item \textbf{Results}
+        %     \begin{itemize}
+        %         \item Corpus creation methodology
+        %         \item More extensive, complete; less noisy data
+        %         \item Large corpus for further research
+        %     \end{itemize}
+        % \end{itemize}
        \column{.375\textwidth}
             \includegraphics[width=0.75\linewidth]{imgs/unarXive_2020_structure_with_db}
            \begin{infobox-pub-small}
@@ -552,7 +566,7 @@
             \begin{itemize}
                 \item Parser efficiency
                 \item Typesetting info $\neq$ semantic info
-                \item \LaTeX is powerful and people are creative
+                \item \LaTeX{} is powerful and people are creative
             \end{itemize}
             \item \textbf{Reference linking}
             \begin{itemize}
@@ -584,7 +598,7 @@
    %  \begin{itemize}
    %      \item \textbf{Parsing}
    %      \begin{itemize}
-   %          \item \LaTeX $\rightarrow$ XML (Tralics)
+   %          \item \LaTeX{} $\rightarrow$ XML (Tralics)
    %          \item identify semantically significant content (cit. markers, references, formulae, figures, tables, ...)
    %          \item give IDs and store away
    %          \item identify main text, convert XML to text
@@ -652,7 +666,7 @@
        \bottomrule
      \end{tabular}
      \begin{tablenotes}
-        \item[a] No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.
+        \item[a] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
       \end{tablenotes}
     \end{threeparttable}
       \end{small}
@@ -667,27 +681,27 @@
       \centering
       \begin{small}
      \begin{threeparttable}
-      \begin{tabular}{lccccccc}
+      \begin{tabular}{lcccccc}
         \toprule
-        \ & \multicolumn{2}{c}{Source} & \multicolumn{2}{c}{\hphantom{wi}Citation Network\tnote{a}} & \ & \ & \ \\
-        Data Set & Data & Format & general & compare & \# Docs & Disciplines & Purpose \\
+        \ & \multicolumn{2}{c}{Source} & \multicolumn{2}{c}{\hphantom{wi}Citation Network\tnote{a}} & \ & \ \\
+        Data Set & Data & Format & general & compare & \# Docs & Disciplines \\
         \midrule
-        CORE~\cite{core} & multiple & PDF & 0\% & - & $>$100 M & various & general NLP \\
-        S2ORC (PDF)~\cite{Lo2020} & multiple & PDF & 69.4\% & - & 12 M & various & general NLP \\
+        CORE~\cite{core} & multiple & PDF & 0\% & - & $>$100 M & various \\
+        S2ORC (PDF)~\cite{Lo2020} & multiple & PDF & 69.4\% & - & 12 M & various \\
         % (19.3+6.8)/(27.8+21.9) = 53% overall, 69.4% GROBID parses, 31.1% LaTeX parses
-        unarXive 2020~\cite{Saier2020} & arXiv.org & \LaTeX & 42.6\% & 42.6\% & 1.2 M & phys., maths, CS & general NLP \\
+        unarXive 2020~\cite{Saier2020} & arXiv.org & \LaTeX & 42.6\% & 42.6\% & 1.2 M & phys., maths, CS \\
         \midrule
-        S2ORC (\LaTeX)~\cite{Lo2020} & arXiv.org & \LaTeX & 31.1\% & 31.1\% & 1.5 M & phys., maths, CS & general NLP \\
-        arXMLiv~\cite{arXMLiv} & arXiv.org & \LaTeX & 0\% & 0\% & 1.6 M & phys., maths, CS & maths linguistics \\
-        SciXGen~\cite{chen2021-scixgen} & arXiv.org & \LaTeX & 41.6\% & - & 205 k & CS & text generation \\
-        PMC-OAS~\cite{pmc_oas} & PubMed & XML & mixed\tnote{b} & - & \textbf{3.3 M} & \textbf{biomedical} & not NLP specific \\
-        \textbf{unarXive 2022}~\cite{Saier2023unarXive} & arXiv.org & \LaTeX & 44.4\% & \textbf{44.4\%} & \textbf{1.9 M} & \textbf{phys., maths, CS} & general NLP \\
+        S2ORC (\LaTeX)~\cite{Lo2020} & arXiv.org & \LaTeX & 31.1\% & 31.1\% & 1.5 M & phys., maths, CS \\
+        arXMLiv~\cite{arXMLiv} & arXiv.org & \LaTeX & 0\% & 0\% & 1.6 M & phys., maths, CS \\
+        SciXGen~\cite{chen2021-scixgen} & arXiv.org & \LaTeX & 41.6\% & - & 205 k & CS \\
+        PMC-OAS~\cite{pmc_oas} & PubMed & XML & mixed\tnote{b} & - & \textbf{3.3 M} & \textbf{biomedical} \\
+        \textbf{unarXive 2022}~\cite{Saier2023unarXive} & arXiv.org & \LaTeX & 44.4\% & \textbf{44.4\%} & \textbf{1.9 M} & \textbf{phys., maths, CS} \\
         % 0.4441 for 1991—2022, 0.4438 for 1991–2020
         \bottomrule
       \end{tabular}
      \begin{tablenotes}
-        \item[a] ``general'': whole data set; not directly comparable. ``compare'': arXiv.org data from 1991--2020; directly comparable.
-        \item[b] No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.
+        \item[a] {\color{contextgrey}``general'': all data; incomparable. ``compare'': arXiv.org data 1991--2020; directly comparable.}
+        \item[b] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
       \end{tablenotes}
     \end{threeparttable}
       \end{small}
@@ -712,7 +726,7 @@
         \bottomrule
     \end{tabular}
      \begin{tablenotes}
-        \item[a] Confidence interval given as Wilson score interval and Jeffreys interval~\cite{Brown2001}.
+        \item[a] {\color{contextgrey}Confidence interval given as Wilson score interval and Jeffreys interval~\cite{Brown2001}.}
       \end{tablenotes}
      \end{threeparttable}
     \end{small}
@@ -730,19 +744,20 @@
         \begin{itemize}
         \item \textbf{Advancements}
             \begin{itemize}
-            \item More extensive
-            \begin{itemize}
-                \item single domain vs multi domain
-                \item 90\,k vs 1.2\,M {\color{lightgrey}/ 2022: 1.6\,M vs 1.9\,M}
-            \end{itemize}
-            \item More complete, high quality citation network
-            \begin{itemize}
-                \item 13.3\% increase in matched references
-            \end{itemize}
-            \item Less noise due to \LaTeX\ as source
-            \item Novel types of analyses possible
+                \item More extensive
+                \begin{itemize}
+                    \item single domain vs multi domain
+                \end{itemize}
+                \item More complete, high quality citation network
+                \begin{itemize}
+                    \item 13.3\% increase in linked references {\color{contextgrey}($\leftrightarrow \text{S2ORC}_\text{\LaTeX}$)}
+                    \item 4\% more accurate reference links {\color{contextgrey}($\leftrightarrow \text{S2ORC}_\text{\LaTeX}$)}
+                \end{itemize}
+                \item Less noise due to \LaTeX\ as source
+                \item Novel types of analyses possible
             \end{itemize}
         \item \textbf{Foundation for further studies}
+        \item $\rightarrow$ \textbf{RT1} $\checkmark$
         \end{itemize}
        % \column{.475\textwidth}
        %    \centering
@@ -1601,7 +1616,7 @@
       \bottomrule
     \end{tabular}
      \begin{tablenotes}
-        \item[a] \textsuperscript{\textdagger}:~Mathematics citing document, \textsuperscript{\textdaggerdbl}:~Mathematics cited document, \underline{X$\rightarrow$X}:~Citing and cited document are from the same discipline).
+        \item[a] {\color{contextgrey}\textsuperscript{\textdagger}:~Mathematics citing document, \textsuperscript{\textdaggerdbl}:~Mathematics cited document, \underline{X$\rightarrow$X}:~Citing and cited document are from the same discipline.}
       \end{tablenotes}
      \end{threeparttable}
     \end{scriptsize}
@@ -1714,7 +1729,7 @@
     \begin{itemize}
     \item \textbf{Corpus}
         \begin{itemize}
-        \item \LaTeX required (no humanities)
+        \item \LaTeX{} required (no humanities)
         \end{itemize}
     \item \textbf{Citation Network}
         \begin{itemize}
