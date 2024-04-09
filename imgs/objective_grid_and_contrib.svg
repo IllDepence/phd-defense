@@ -6777,7 +6777,7 @@
       <rdf:RDF>
         <cc:Work
            rdf:about="">
-          <dc:title></dc:title>
+          <dc:title />
           <dc:description>Parchment Background</dc:description>
           <dc:subject>
             <rdf:Bag>
@@ -15601,11 +15601,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="266.85008"
-     inkscape:cy="75.092289"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="366.39521"
+     inkscape:cy="-11.503103"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g15949"
      showgrid="false"
      inkscape:window-width="1918"
      inkscape:window-height="1042"
@@ -16458,16 +16458,16 @@
            x="11.148577"
            id="tspan14689-8"
            sodipodi:role="line">① extraction method</tspan><tspan
-           id="tspan14695-9"
+           id="tspan14966"
            style="text-align:start;text-anchor:start;stroke-width:0.26458332"
            y="47.176285"
            x="11.148577"
-           sodipodi:role="line">    for cross-lingual cit</tspan><tspan
-           id="tspan14966"
+           sodipodi:role="line">    for cross-lingual cit.</tspan><tspan
            style="text-align:start;text-anchor:start;stroke-width:0.26458332"
            y="50.351284"
            x="11.148577"
-           sodipodi:role="line">.</tspan><tspan
+           sodipodi:role="line"
+           id="tspan3209" /><tspan
            id="tspan14744-2"
            style="text-align:start;text-anchor:start;stroke-width:0.26458332"
            y="53.526287"
@@ -16534,12 +16534,12 @@
            sodipodi:role="line">[ECIR'24]</tspan></text>
     </g>
     <rect
-       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.65829146;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.65882355;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.65829145;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.65882353;paint-order:normal"
        id="rect1537-9-3-9-5"
        width="66.191635"
        height="44.925991"
        x="-24.683039"
-       y="32.924252"
+       y="32.924248"
        rx="1.9999985"
        ry="2.0000012" />
   </g>
