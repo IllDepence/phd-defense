@@ -507,7 +507,7 @@
        \column{.575\textwidth}
         \begin{itemize}
             \item \textbf{Research Task}\\Develop a method for creating large-scale, high quality ``base corpus''
-            \item \textbf{Approach}
+            \item \textbf{Method}
             \begin{itemize}
                 \item Conversion of / IE from \LaTeX
                 \item Joint handling of text + references
@@ -772,7 +772,7 @@
         \begin{infobox-map}
         \centering
         \begin{Huge}
-        \textbf{Cit. Netw. \& Non-Eng. Docs}\\
+        \textbf{Citations \& Non-English}\\
         \end{Huge}
         \end{infobox-map}
    \end{frame}
@@ -783,22 +783,19 @@
    \begin{columns}
        \column{.475\textwidth}
         \begin{itemize}
-            \item \textbf{Research gap}
-            \begin{itemize}
-                \item Reference linking coverage
-                \item Reliance on target data set
-            \end{itemize}
-            \item \textbf{Approach}
+            \item \textbf{Research Task}\\Develop a method linking references more successfully without compromising accuracy
+            \item \textbf{Method}
             \begin{itemize}
                 \item Use unarXive data
-                \item Improved reference parsing pipeline
-                \item Blocking approach used within set of references
+                \item Improved reference linking pipeline\\(parser \& target set choice, heuristics)
+                \item Blocking \& matching within set of references
             \end{itemize}
             \item \textbf{Results}
             \begin{itemize}
-                \item 2\% increase in base matching success
+                \item +2\% in base matching success (SOTA)
                 \item Manifold increase in bibliographic coupling matches
             \end{itemize}
+            \item $\rightarrow$ \textbf{RT2} $\checkmark$
         \end{itemize}
        \column{.475\textwidth}
             \includegraphics[width=\linewidth]{imgs/blocking_schema}
@@ -819,15 +816,11 @@
        \column{.575\textwidth}
         \vspace{-1cm}
         \begin{itemize}
-            \item \textbf{Research gap}
-            \begin{itemize}
-                \item Restriction of existing work to English
-                \item Limited scale of existing studies
-            \end{itemize}
-            \item \textbf{Approach}
+            \item \textbf{Research Task}\\Develop an approach to include non-English publications into large-scale scholarly data
+            \item \textbf{Method}
             \begin{itemize}
                 \item Use unarXive data
-                \item Document language from raw reference strings
+                \item Identify cross-lingual citations by reference strings
                 \item Temporal and geographic analyses
             \end{itemize}
             \item \textbf{Results}
@@ -836,6 +829,7 @@
                 \item Largest study so far ($<$1k $\rightarrow$ $>$1M)
                 \item Identification of trends and challenges
             \end{itemize}
+            \item $\rightarrow$ \textbf{RT3} $\checkmark$
         \end{itemize}
        \column{.375\textwidth}
             \includegraphics[width=0.8\linewidth]{imgs/xling_example_result}
@@ -879,13 +873,8 @@
    \begin{columns}
        \column{.475\textwidth}
         \begin{itemize}
-            \item \textbf{Research gap}
-            \begin{itemize}
-                \item Important information not considered
-                \item Lack of link granularity
-                \item No formalization/approaches
-            \end{itemize}
-            \item \textbf{Approach}
+            \item \textbf{Research Task}\\Develop a method to extract fine-grained research artifacts information
+            \item \textbf{Method}
             \begin{itemize}
                 \item Task formalization
                 \item Data annotation {\color{lightgrey}(data from unarXive)}
