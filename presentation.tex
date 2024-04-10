@@ -765,7 +765,7 @@
    \end{frame}
 
 
-\section{Cit. Netw. \& Non-Eng. Docs}
+\section{Citations \& Non-English}
 
    \begin{frame}[plain]
         \vspace{0.7cm}
@@ -862,6 +862,14 @@
        \end{overprint}
    \end{frame}
 
+   \begin{frame}{Artifact Parameters - Motivation}
+       \begin{overprint}
+           \onslide<1> \centering\includegraphics[width=.75\textwidth]{imgs/artifacts_en}
+           \onslide<2> \centering\includegraphics[width=.75\textwidth]{imgs/artifacts_de}
+           \onslide<3> \centering \vspace{1.25em}\begin{large}NLP field increasing focus on \textbf{data} and its \textbf{algorithmic processing}\end{large}\\\vspace{1em}\includegraphics[width=.5\textwidth]{imgs/use_on_the_rise_e}\\\begin{tiny}\fullcite{Jurgens2018}\end{tiny}
+       \end{overprint}
+   \end{frame}
+
    \begin{frame}{Artifact Parameters - Digest}
     % - why useful, why challenging
     % - highlight trends in focussing on research artifacts
@@ -888,6 +896,7 @@
             \begin{itemize}
                 \item Novel task, novel data
                 \item Improvements over SOTA baselines
+                \item Methods applicable to large data sets
             \end{itemize}
         \end{itemize}
        \column{.475\textwidth}
@@ -911,95 +920,63 @@
    %\end{itemize}
    %\end{frame}
 
-   \begin{frame}{Artifact Parameters - Task Definition}
-   \begin{itemize}
-       \item \textbf{Goal}
-       \begin{itemize}
-           \item Automatically extract parameter information from paper text
-       \end{itemize}
-       \item \textbf{Motivation}
-       \begin{itemize}
-           \item Reproducibility indication~\cite{Radd2019}, automation~\cite{sethi2018}
-           \item Uncover conventions and trends
-           \item More fine-grained paper representations (similarity measures, recommendation, search)
-       \end{itemize}
-       \item \textbf{Task Type}
-       \begin{itemize}
-           \item (Named) Entity Recognition, Relation Extraction \hphantom{mmmmm} \smash{\includegraphics[height=2.75\fontcharht\font`\B]{imgs/ner_el_c}}
-       \end{itemize}
-       % \item \textbf{Approach}
-       % \begin{itemize}
-       %     \item Manually annotated data set
-       %     \item Fine-tuned models in supervised setting
-       %     \item LLMs in zero-/few-shot setting
-       % \end{itemize}
-   \end{itemize}
-   \end{frame}
+   % \begin{frame}{Artifact Parameters - Task Definition}
+   % \begin{itemize}
+   %     \item \textbf{Goal}
+   %     \begin{itemize}
+   %         \item Automatically extract parameter information from paper text
+   %     \end{itemize}
+   %     \item \textbf{Motivation}
+   %     \begin{itemize}
+   %         \item Reproducibility indication~\cite{Radd2019}, automation~\cite{sethi2018}
+   %         \item Uncover conventions and trends
+   %         \item More fine-grained paper representations (similarity measures, recommendation, search)
+   %     \end{itemize}
+   %     \item \textbf{Task Type}
+   %     \begin{itemize}
+   %         \item (Named) Entity Recognition, Relation Extraction \hphantom{mmmmm} \smash{\includegraphics[height=2.75\fontcharht\font`\B]{imgs/ner_el_c}}
+   %     \end{itemize}
+   %     % \item \textbf{Approach}
+   %     % \begin{itemize}
+   %     %     \item Manually annotated data set
+   %     %     \item Fine-tuned models in supervised setting
+   %     %     \item LLMs in zero-/few-shot setting
+   %     % \end{itemize}
+   % \end{itemize}
+   % \end{frame}
 
-   \begin{frame}{Artifact Parameters - Scope \& Annotation Scheme}
-   \begin{itemize}
-       \item 4 entity classes
-       \begin{itemize}
-           \item (1) research \textbf{artifact}: model, method, data set, ...
-           \item descriptions of how authors use the artifacts\\
-                (2) \textbf{parameter} ($\alpha$, learning rate, k, ...)\\
-                (3) \textbf{value} (1e-3, five, $\frac{1}{3}$, ...)\\
-                (4) \textbf{context} (for fine-tuning, during grid search, ...)
-       \end{itemize}
-       \item 1 relation type
-       \item out of scope
-           \begin{itemize}
-                \item measurements (\textit{``We obtain an AUC value of 0.75''})
-                % \item IE from tabes, code, etc.
-           \end{itemize}
-   \end{itemize}
-   \end{frame}
+   % \begin{frame}{Artifact Parameters - Scope \& Annotation Scheme}
+   % \begin{itemize}
+   %     \item 4 entity classes
+   %     \begin{itemize}
+   %         \item (1) research \textbf{artifact}: model, method, data set, ...
+   %         \item descriptions of how authors use the artifacts\\
+   %              (2) \textbf{parameter} ($\alpha$, learning rate, k, ...)\\
+   %              (3) \textbf{value} (1e-3, five, $\frac{1}{3}$, ...)\\
+   %              (4) \textbf{context} (for fine-tuning, during grid search, ...)
+   %     \end{itemize}
+   %     \item 1 relation type
+   %     \item out of scope
+   %         \begin{itemize}
+   %              \item measurements (\textit{``We obtain an AUC value of 0.75''})
+   %              % \item IE from tabes, code, etc.
+   %         \end{itemize}
+   % \end{itemize}
+   % \end{frame}
 
-   \begin{frame}{Scope \& Annotation Scheme}
-       \centering
-       \includegraphics[width=0.75\textwidth]{imgs/schema_visual_v3}
-   \end{frame}
+   % \begin{frame}{Scope \& Annotation Scheme}
+   %     \centering
+   %     \includegraphics[width=0.75\textwidth]{imgs/schema_visual_v3}
+   % \end{frame}
 
-   \begin{frame}{Artifact Parameters - Data}
-   \begin{columns}
-       \column{.375\textwidth}
-           \begin{itemize}
-               \item Annotation approach
-               \begin{itemize}
-                  \item Guidelines based on ACL RD-TEC guidelines~\cite{Qasemizadeh2016}
-                  \item Paragraph level, whole papers
-               \end{itemize}
-               \item Extent
-               \begin{itemize}
-                  \item 444 paragraphs
-                  \item 1,971 entities\\(1,134 a, 131 p, 662 v, 44 c)
-                  \item 614 relations
-               \end{itemize}
-               \item IAA
-               \begin{itemize}
-                  \item 0.867 for entities
-                  \item 0.737 for relations
-               \end{itemize}
-           \end{itemize}
-       \column{.575\textwidth}
-        \only<1>{
-            \centering
-            \includegraphics[width=.8\linewidth]{imgs/annot_guidelines}
-        }
-        \only<2>{
-            \begin{figure}
-                \centering
-                \subfloat[text segments\label{fig:text-seg-size}]{%
-                    \includegraphics[width=.35\linewidth]{imgs/text_span_size_stats}
-                }
-                \subfloat[relation distances (\#chars)\label{fig:rel-dists}]{%
-                    \includegraphics[width=.53\linewidth]{imgs/stats_artifact_param_value_distance-crop}
-                }
-                \caption{Observations of initial annotation round}
-                \label{fig:init-annot}
-            \end{figure}
-        }
-   \end{columns}
+   \begin{frame}{Artifact Parameters - Task}
+       \begin{overprint}
+           \onslide<1> \centering\includegraphics[width=0.75\textwidth]{imgs/schema_visual_praes_4}
+           \onslide<2> \centering\includegraphics[width=0.75\textwidth]{imgs/schema_visual_praes_3}
+           \onslide<3> \centering\includegraphics[width=0.75\textwidth]{imgs/schema_visual_praes_2}
+           \onslide<4> \centering\includegraphics[width=0.75\textwidth]{imgs/schema_visual_praes_1}
+           \onslide<5> \centering\includegraphics[width=0.75\textwidth]{imgs/schema_visual_praes_0}
+       \end{overprint}
    \end{frame}
 
    \begin{frame}{Artifact Parameters - Related Work: Fine-tuned models}
@@ -1010,21 +987,22 @@
                    \begin{itemize}
                        \item SCIIE~\cite{luan2018scierc}
                        \item PL-Marker~\cite{Ye2022}
-                       \item \textbf{$\rightarrow$ overlap}
+                       \item \textbf{$\rightarrow$ entity type overlap}
                    \end{itemize}
-               \item {\color{contextgrey}SciREX dataset} % (document level)
-                   \begin{itemize}
-                       {\item \color{contextgrey}TempGen~\cite{Huang2021} (only RE)}
-                   \end{itemize}
-               \item {\color{contextgrey}SemEval 2022 (math symb. to descr.)}
-                   \begin{itemize}
-                       \item {\color{contextgrey}JBNU-CCLab~\cite{Lee2022}}
-                       \item {\color{contextgrey}AIFB~\cite{Popovic2022}}
-                   \end{itemize}
+               \item [[~~...]]
+               % \item {\color{contextgrey}SciREX dataset} % (document level)
+               %     \begin{itemize}
+               %         {\item \color{contextgrey}TempGen~\cite{Huang2021} (only RE)}
+               %     \end{itemize}
+               % \item {\color{contextgrey}SemEval 2022 (math symb. to descr.)}
+               %     \begin{itemize}
+               %         \item {\color{contextgrey}JBNU-CCLab~\cite{Lee2022}}
+               %         \item {\color{contextgrey}AIFB~\cite{Popovic2022}}
+               %     \end{itemize}
                \item SemEval 2021 (measurements)
                    \begin{itemize}
                        \item LIORI~\cite{Davletov2021}
-                       \item \textbf{$\rightarrow$ mention patterns}
+                       \item \textbf{$\rightarrow$ utilize mention pattern regularities}
                    \end{itemize}
            \end{itemize}
        \column{.475\textwidth}
@@ -1045,7 +1023,7 @@
                    \begin{itemize}
                        \item singular values
                        \item lists
-                       \item complex~\cite{Dunn2022} (see right)
+                       \item hierarchical~\cite{Dunn2022} (see right)\\\textbf{$\rightarrow$ data serialization format}
                    \end{itemize}
            \end{itemize}
 
@@ -1053,103 +1031,158 @@
           Note: all of the above evaluate\\
           on GPT models only.
        \column{.475\textwidth}
-           \begin{center}\includegraphics[width=\textwidth]{imgs/llm_sciext}\end{center}
+           \begin{center}\includegraphics[width=0.9\textwidth]{imgs/llm_sciext}\\{\tiny\fullcite{Dunn2022}\par}\end{center}
    \end{columns}
    \end{frame}
 
-   \begin{frame}{Artifact Parameters - Approach}
-   \begin{columns}
-       \column{.575\textwidth}
-           \begin{itemize}
-               % \item \textbf{Data}
-               % \begin{itemize}
-               %     \item papers from ML, CL, CV, DL
-               %     % \item manual annotation
-               %     % \item sped up by automated pre-annotation
-               % \end{itemize}
-               \item \textbf{Fine-tuned, supervised}
-               \begin{itemize}
-                   \item PL-Marker (SciERC SOTA)
-                   \item Mention pattern aware RE (ours)
-               \end{itemize}
-               \item \textbf{LLM, zero-/few-shot}
-               \begin{itemize}
-                   \item 6 models
-                   \item JSON approach (MatSci)
-                   \item YAML approach (ours)
-               \end{itemize}
-           \end{itemize}
-       \column{.375\textwidth}
-            \ 
-   \end{columns}
-   \end{frame}
-
-   \begin{frame}{Artifact Parameters - Methods: Fine-tuned models}
+   \begin{frame}{Approach: Fine-tuned models}
    \begin{columns}
        \column{.375\textwidth}
            \begin{itemize}
-               \item Based on PL-Marker % (SciERC SOTA)
-               \item New RE module
-               \item Include entity class emb. + distance in model input
+               \item Based on PL-Marker\\(SciERC SOTA)
+               \item (N)ER: used as is
+               \item RE: new module, utilizing
+               \begin{itemize}
+                   \item Entity class embeddings
+                   \item Entity distance
+               \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
            \includegraphics[width=\linewidth]{imgs/ffnn_re_sub_visual_v2}
    \end{columns}
    \end{frame}
 
-   \begin{frame}{Artifact Parameters - Methods: LLMs}
+   \begin{frame}{Approach: LLMs}
    \begin{columns}
        \column{.375\textwidth}
            \begin{itemize}
-               \item Test various prompting techniques
+               % \item Test various prompting techniques
+               % \begin{itemize}
+               %     \item Multi-stage
+               %     \item In-text annitation
+               %     \item Data serialization format \checkmark
+               % \end{itemize}
+               \item Data serialization format
                \begin{itemize}
-                   \item Multi-stage
-                   \item In-text annitation
-                   \item Data serialization format \checkmark
+                    \item JSON $\rightarrow$ YAML
                \end{itemize}
                \item Compare 6 models
                \item Base prompt + tuning for each
-               \item Few-shot only with Vicuna${}_\text{16k}$
+               \item Zero-shot: all
+               \item Few-shot: only Vicuna${}_\text{16k}$
+               % \begin{itemize}
+               %     \item gBNF grammar
+               % \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
+        \begin{overlayarea}{\textwidth}{2.45cm}
+        \only<1>{
+           \includegraphics[width=\linewidth]{imgs/llm_nerre_visual_v2}
+        }
+        \only<2>{
         \begin{table}
         \centering
           % \caption[LLM selection]{LLM selection (size in number of parameters).}
           % \label{tab:llmselection}
           \begin{tabular}{llc}
             \hline
-            Model & Variant & Size \\
+            Model & Size \\ % & Variant
             \hline
             WizardLM~\cite{xu2023wizardlm2023}
-            & \texttt{WizardLM-13B-V1.1} & 13\,B \\
+            %& \texttt{WizardLM-13B-V1.1}
+            & 13\,B \\
             Vicuna${}_{4k}$~\cite{vicuna2023}
-            & \texttt{vicuna-13b-v1.3} & 13\,B \\
+            %& \texttt{vicuna-13b-v1.3}
+            & 13\,B \\
             Vicuna${}_{16k}$~\cite{vicuna2023}
-            & \texttt{vicuna-13b-v1.5-16k} & 13\,B \\
+            %& \texttt{vicuna-13b-v1.5-16k}
+            & 13\,B \\
             Falcon~\cite{falcon40b-huggingface}
-            & \texttt{falcon-40b-instruct} & 40\,B \\
+            %& \texttt{falcon-40b-instruct}
+            & 40\,B \\
             GALACTICA~\cite{GALACTICA2022}
-            & \texttt{galactica-120b} & 120\,B \\
+            %& \texttt{galactica-120b}
+            & 120\,B \\
             GPT-3.5~\cite{Brown2020gpt3}
-            & \texttt{text-davinci-003} & 175\,B \\
+            %& \texttt{text-davinci-003}
+            & 175\,B \\
             \hline
             \end{tabular}
         \end{table}
+        }
+        \end{overlayarea}
    \end{columns}
    \end{frame}
 
-   \begin{frame}{Artifact Parameters - Methods: LLMs}
-       \centering
-       \includegraphics[width=0.75\textwidth]{imgs/prompt}
+   \begin{frame}{Artifact Parameters - Data}
+   \begin{columns}
+       \column{.375\textwidth}
+           \begin{itemize}
+               \item No existing data sets\\$\rightarrow$ use unarXive ML/CV/CL/DL
+               \item Annotation approach
+               \begin{itemize}
+                  %\item Guidelines based on ACL RD-TEC guidelines~\cite{Qasemizadeh2016}
+                  \item Paragraph level, whole papers
+               \end{itemize}
+               \item Extent
+               \begin{itemize}
+                  \item 444 paragraphs
+                  \item 1,971 entities\\(1,134 a, 131 p, 662 v, 44 c)
+                  \item 614 relations
+               \end{itemize}
+               \item IAA
+               \begin{itemize}
+                  \item 0.867 for entities
+                  \item 0.737 for relations
+               \end{itemize}
+           \end{itemize}
+       \column{.575\textwidth}
+        \only<1>{
+            \centering
+            \includegraphics[width=.8\linewidth]{imgs/annot_guidelines}
+        }
+        % \only<2>{
+        %     \begin{figure}
+        %         \centering
+        %         \subfloat[text segments\label{fig:text-seg-size}]{%
+        %             \includegraphics[width=.35\linewidth]{imgs/text_span_size_stats}
+        %         }
+        %         \subfloat[relation distances (\#chars)\label{fig:rel-dists}]{%
+        %             \includegraphics[width=.53\linewidth]{imgs/stats_artifact_param_value_distance-crop}
+        %         }
+        %         \caption{Observations of initial annotation round}
+        %         \label{fig:init-annot}
+        %     \end{figure}
+        % }
+   \end{columns}
    \end{frame}
 
    \begin{frame}{Artifact Parameters - Experiments: Fine-tuned models}
    \begin{columns}
-       \column{.575\textwidth}
-          5-fold cross-validation, stratified sampling\\
-          ‌\\
-           \includegraphics[width=\linewidth]{imgs/fine_tuned_eval}
        \column{.375\textwidth}
+           \begin{itemize}
+               \item \textbf{Setting}
+               \begin{itemize}
+                   \item 5-fold cross-validation
+                   \item Stratified sampling
+               \end{itemize}
+               \item \textbf{Results} ($\text{F}_1$\,[\%])
+               \begin{itemize}
+                  \item ER: 78.0
+                  \item RE: 9.9 $\rightarrow$ 38.8
+               \end{itemize}
+               \item \textbf{Analysis}
+               \begin{itemize}
+                  \item Parameter: low performance
+                  \item Contexts: not predicted
+               \end{itemize}
+           \end{itemize}
+       \column{.575\textwidth}
+        \begin{overlayarea}{\textwidth}{3cm}
+        \only<2>{
+           \includegraphics[width=\linewidth]{imgs/fine_tuned_eval}
+        }
+        \only<3>{
         \begin{table}
           \centering
           \caption[Ablation study results]{Ablation study results (model inputs are: T = BERT token embeddings, C = entity class embeddings, D = entity distance)}
@@ -1165,8 +1198,11 @@
             \hline
           \end{tabular}
         \end{table}
+        }
+        \end{overlayarea}
    \end{columns}
    \end{frame}
+
 
    % \begin{frame}{Artifact Parameters - Experiments: LLMs}
    %  \begin{table}
@@ -1233,98 +1269,124 @@
 
 
    \begin{frame}{Artifact Parameters - Experiments: LLMs}
+   \begin{columns}
+       \column{.375\textwidth}
+           \vspace{-4em}
+           \begin{itemize}
+               \item \textbf{Setting}
+               \begin{itemize}
+                   \item Zero-/5-shot
+                   \item Compare JSON w/ YAML variant
+               \end{itemize}
+               \item \textbf{Results} (best ER / RE $\text{F}_1$\,[\%])
+               \begin{itemize}
+                  \item Zero-shot: 37.4 / 7.8
+                  \item 5-shot: 44.0 / 6.1
+               \end{itemize}
+               \item \textbf{Analysis}
+               \begin{itemize}
+                  \item Very low RE performance
+                  \item YAML: avg. +5\% in ER
+                  \item 5-shot: +27\% ER, +6\% RE
+                  \item Format adherence\\+ entity hallucinations
+               \end{itemize}
+           \end{itemize}
+       \column{.575\textwidth}
+        \begin{overlayarea}{\textwidth}{7cm}
+        \only<2>{
+
     \begin{table}
      \begin{small}
       \centering
       %\caption[Prediction performance of LLM models]{Prediction performance of LLM models. Subscripts (${}_{\Delta\pm n}$) show the delta in $\text{F}_1$ from JSON to YAML output of each model. Format: \textbf{best}, \underline{second}.}
-      \begin{tabular}{ll|ccc|ccc}
+      \begin{tabular}{ll|cc}
         \hline
         \multicolumn{2}{l|}{\textbf{Zero-shot}} &
-        \multicolumn{3}{c|}{Entity Recognition} &
-        \multicolumn{3}{c}{Relation Extraction} \\
+        ER &
+        RE \\
         \hline
-        Model & Output & P [\%] & R [\%] & $\text{F}_1$\,[\%] &
-                         P [\%] & R [\%] & $\text{F}_1$\,[\%] \\
+        Model & Output & $\text{F}_1$\,[\%] &
+                         $\text{F}_1$\,[\%] \\
         \hline
 
         \multirow{2}{*}{WizardLM} &
-        JSON & 6.9 & 11.3 & 8.6
-                  & 0.1 & 0.8 & 0.1 \\
-        \ & YAML & 9.7 & 35.6 &
+        JSON & 8.6
+             &  0.1 \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+6.7}}$}
         15.3{\color{parametergreen}{${}_{\Delta\text{+6.7}}$}}
-                  & 0.1 & 1.5 &
+                  &
         \hphantom{${}_{\Delta\text{+0.0}}$}
         0.1{\color{contextgrey}{${}_{\Delta\text{+0.0}}$}}  \\
         \cline{1-2}
 
         \multirow{2}{*}{Vicuna${}_{4k}$} &
-        JSON & 15.1 & 9.3 & 11.5
-                  & 0.7 & 3.8 & 1.2 \\
-        \ & YAML & 17.3 & 31.5 &
+        JSON & 11.5
+             & 1.2 \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+10.8}}$}
         22.3{\color{parametergreen}{${}_{\Delta\text{+10.8}}$}}
-                  & 0.0 & 0.8 &
+                  &
         \hphantom{${}_{\Delta\text{-1.1}}$}
         0.1{\color{valuered}{${}_{\Delta\text{-1.1}}$}}  \\
         \cline{1-2}
 
         \multirow{2}{*}{Falcon} &
-        JSON & \textbf{37.1} & 5.9 & 10.2
-                  & 0.0 & 0.0 & 0.0 \\
-        \ & YAML & 32.7 & 14.2 &
+        JSON & 10.2
+             & 0.0 \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+9.6}}$}
         19.8{\color{parametergreen}{${}_{\Delta\text{+9.6}}$}}
-                  & 0.0 & 0.0 &
+                  &
         \hphantom{${}_{\Delta\text{+0.0}}$}
         0.0{\color{contextgrey}{${}_{\Delta\text{+0.0}}$}}  \\
         \cline{1-2}
 
         \multirow{2}{*}{GALACTICA} &
-        JSON & 25.9 & 15.7 & 19.5
-                  & 0.1 & 2.3 & 0.3 \\
-        \ & YAML & 23.1 & 19.5 &
+        JSON & 19.5
+             & 0.3 \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+1.6}}$}
         21.1{\color{parametergreen}{${}_{\Delta\text{+1.6}}$}}
-                  & 0.0 & 0.8 &
+                  &
         \hphantom{${}_{\Delta\text{-0.2}}$}
         0.1{\color{valuered}{${}_{\Delta\text{-0.2}}$}}  \\
         \cline{1-2}
 
         \multirow{2}{*}{GPT-3.5} &
-        JSON & 27.9 & \textbf{42.8} & \underline{33.8}
-                  & \underline{5.4} & \underline{10.7} & \underline{7.2} \\
-        \ & YAML & \underline{34.0} & \underline{41.7} &
+        JSON & \underline{33.8}
+             & \underline{7.2} \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+3.6}}$}
         \textbf{37.4}{\color{parametergreen}{${}_{\Delta\text{+3.6}}$}}
-                  & \textbf{5.8} & \textbf{12.2} &
+                  &
         \hphantom{${}_{\Delta\text{+0.6}}$}
         \textbf{7.8}{\color{parametergreen}{${}_{\Delta\text{+0.6}}$}}  \\
 
       \hline
         \multicolumn{2}{l|}{\textbf{5-shot}} &
-        \multicolumn{3}{c|}{Entity Recognition} &
-        \multicolumn{3}{c}{Relation Extraction} \\
+        ER &
+        RE \\
       \hline
 
         \multirow{2}{*}{Vicuna${}_{16k}$} &
-        JSON & \underline{34.4} & \underline{46.7} & \underline{39.6}
-                  & \underline{0.8} & \underline{4.6} & \underline{1.3} \\
-        \ & YAML & \textbf{43.9} & \textbf{44.1} &
+        JSON & \underline{39.6}
+             & \underline{1.3} \\
+        \ & YAML &
         \hphantom{${}_{\Delta\text{+0.4}}$}
         \textbf{44.0}{\color{parametergreen}{${}_{\Delta\text{+0.4}}$}}
-                  & \textbf{4.5} & \textbf{9.9} &
+                  &
         \hphantom{${}_{\Delta\text{+4.8}}$}
         \textbf{6.1}{\color{parametergreen}{${}_{\Delta\text{+4.8}}$}}  \\
       \hline
       \end{tabular}
      \end{small}
     \end{table}
-   \end{frame}
 
-   \begin{frame}{Artifact Parameters - Experiments: LLMs}
-       \centering
-       \includegraphics[width=0.75\textwidth]{imgs/llm_format_eval_mix}
+        }
+        \end{overlayarea}
+   \end{columns}
+
    \end{frame}
 
    \begin{frame}{Artifact Parameters - Experiments: Application}
@@ -1340,7 +1402,7 @@
             \item 36\% of CL papers
             \item 7\% of DL papers
         \end{itemize}
-        \item Distribution towards second half of paper accross disciplines
+        \item Distribution towards second half of paper across disciplines
         \end{itemize}
        \column{.375\textwidth}
           \centering
@@ -1348,28 +1410,28 @@
    \end{columns}
    \end{frame}
 
-   \begin{frame}{Artifact Parameters - Discussion}
+   \begin{frame}{Artifact Parameters - Conclusion}
    % - summary of results & contributions
    % \begin{columns}
    %     \column{.575\textwidth}
-        \begin{itemize}
-        \item Applicable on large scale
-        \item LLMs not on par with BERT based model
+    \begin{itemize}
         \item \textbf{Advancements}
-            \begin{itemize}
-            \item Task formalization (scope, data scheme, annotation guidelines)
+        \begin{itemize}
+            \item Novel, relevant task\\
+                  (data scheme, annotation guidelines)
             \item High quality manually annotated data set
-            \item BERT model based approach
-            \begin{itemize}
-                \item 29\% F${}_1$ increase for RE
-            \end{itemize}
-            \item LLM approach
-            \begin{itemize}
-                \item avg. 5.5\% F${}_1$ increase for NER
-                \item consistent across all LLMs
-            \end{itemize}
-            \end{itemize}
+            \item Approaches based on BERT, LLMs
+                \begin{itemize}
+                \item BERT model based approach\\
+                      29\% F${}_1$ increase for RE
+                \item LLM approach\\
+                      Avg. 5.5\% F${}_1$ increase for ER\\
+                      (consistent across all used LLMs)
+                \end{itemize}
+            \item Trained model applicable on large scale
         \end{itemize}
+        \item $\rightarrow$ \textbf{RT4} $\checkmark$
+    \end{itemize}
        % \column{.475\textwidth}
        %    \centering
    % \end{columns}
