@@ -414,6 +414,7 @@
 % KIT color  green :
 \definecolor{kit-green}{RGB}{0, 150, 130}
 \definecolor{kit-green100}{RGB}{0, 150, 130}
+%\definecolor{kit-green100}{RGB}{0, 130, 175}
 \definecolor{kit-green90}{rgb}{0.1, 0.6294, 0.5588}
 \definecolor{kit-green80}{rgb}{0.2, 0.6706, 0.6078}
 \definecolor{kit-green75}{rgb}{0.25, 0.6912, 0.6324}
@@ -425,6 +426,7 @@
 \definecolor{kit-green25}{rgb}{0.75, 0.8971, 0.8775}
 \definecolor{kit-green20}{rgb}{0.8, 0.9176, 0.902}
 \definecolor{kit-green15}{rgb}{0.85, 0.9382, 0.9265}
+%\definecolor{kit-green15}{rgb}{247,252,253}
 \definecolor{kit-green10}{rgb}{0.9, 0.9588, 0.951}
 \definecolor{kit-green5}{rgb}{0.95, 0.9794, 0.9755}
 

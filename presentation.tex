@@ -172,6 +172,18 @@
     }
 }
 % % /infoboxes
+\newcommand{\rtmark}[1]{%
+    \textbf{{\color{objblue-box}\faCrosshairs}\,RT#1}%
+}
+% \usepackage{enumitem}
+% \newlist{rtlist}{enumerate}{1}
+% \setlist[rtlist]{%
+% labelindent=0em,%
+% labelwidth=2cm,%
+% labelsep*=0.5em,%
+% leftmargin=!,%
+% label=\rtmark{\arabic*}:,%
+% }
 
 \usepackage{makecell}
 % Redefine the cellset for makecell to adjust the line height
@@ -209,21 +221,21 @@
         \begin{itemize}
             \item \textbf{Usage}
             \begin{itemize}
-                \item Services (Search, Recommendation, Stats)
-                \item ML models (LLMs, sumarization, recommender systems) % PILE, S2ORC, unarXive, ...)
-                \item Analyses (temporal, geographic, institutional)
+                \item Services {\color{contextgrey}(search, recommendation, statistics)}
+                \item ML models {\color{contextgrey}(LLMs, sumarization, recommender systems)} % PILE, S2ORC, unarXive, ...)
+                \item Analyses {\color{contextgrey}(temporal, geographic, institutional)}
             \end{itemize}
             \item \textbf{Flavors}
             \begin{itemize}
-                \item Metadata (MAG, OpenAlex, ORKG, crossref)
-                \item Documents (Core, arXMLiv, PMC)
-                \item Linked Documents (unarXive, S2ORC)
+                \item Metadata {\color{contextgrey}(MAG, OpenAlex, ORKG, crossref)}
+                \item Documents {\color{contextgrey}(Core, arXMLiv, PMC)}
+                \item Linked Documents {\color{contextgrey}(unarXive, S2ORC)}
             \end{itemize}
             \item \textbf{Data Sources}
             \begin{itemize}
-                \item PDF (Core, ACL Anthology)
-                \item XML (PubMed, PLOS, publisher internal)
-                \item LaTeX (arXiv)
+                \item PDF {\color{contextgrey}(Core, ACL Anthology)}
+                \item XML {\color{contextgrey}(PubMed, PLOS, publisher internal)}
+                \item LaTeX {\color{contextgrey}(arXiv)}
             \end{itemize}
         \end{itemize}
        \column{.375\textwidth}
@@ -296,12 +308,12 @@
    \only<4>{
         {\Large\textbf{false maps $\Rightarrow$ misleading/false analyses, models, etc.}}
    }
-   % \only<5>{
-   %      {\Large\textbf{our maps of science are insufficient}}
-   % }
    \only<5>{
+        {\Large\textbf{our maps of science are insufficient}}
+   }
+   \only<6>{
        \begin{infobox-objective}
-       \Large\textbf{Research Objective}\\Develop methods for generating high-quality scholarly data.
+       \large\textbf{Research Objective}\\Develop methods for generating large-scale, high quality scholarly data.
        \end{infobox-objective}
    }
    \end{frame}
@@ -757,7 +769,7 @@
                 \item Novel types of analyses possible
             \end{itemize}
         \item \textbf{Foundation for further studies}
-        \item $\rightarrow$ \textbf{RT1} $\checkmark$
+        \item $\rightarrow$ \rtmark{1\large\checkmark}
         \end{itemize}
        % \column{.475\textwidth}
        %    \centering
@@ -793,9 +805,9 @@
             \item \textbf{Results}
             \begin{itemize}
                 \item +2\% in base matching success (SOTA)
-                \item Manifold increase in bibliographic coupling matches
+                \item Manifold increase in bibl. couplings
             \end{itemize}
-            \item $\rightarrow$ \textbf{RT2} $\checkmark$
+            \item $\rightarrow$ \rtmark{2\large\checkmark}
         \end{itemize}
        \column{.475\textwidth}
             \includegraphics[width=\linewidth]{imgs/blocking_schema}
@@ -829,7 +841,7 @@
                 \item Largest study so far ($<$1k $\rightarrow$ $>$1M)
                 \item Identification of trends and challenges
             \end{itemize}
-            \item $\rightarrow$ \textbf{RT3} $\checkmark$
+            \item $\rightarrow$ \rtmark{3\large\checkmark}
         \end{itemize}
        \column{.375\textwidth}
             \includegraphics[width=0.8\linewidth]{imgs/xling_example_result}
@@ -1430,7 +1442,7 @@
                 \end{itemize}
             \item Trained model applicable on large scale
         \end{itemize}
-        \item $\rightarrow$ \textbf{RT4} $\checkmark$
+        \item $\rightarrow$ \rtmark{4\large\checkmark}
     \end{itemize}
        % \column{.475\textwidth}
        %    \centering
@@ -1452,17 +1464,19 @@
    \begin{frame}[t]{Overall Conclusion}
 
    \begin{infobox-objective}
-   \Large\textbf{Research Objective}\\Develop methods for generating high-quality scholarly data.
+   \large\textbf{Research Objective}\\Develop methods for generating large-scale, high quality scholarly data.
    \end{infobox-objective}
 
-   \only<2>{
    \vspace{.5em}
+   \only<2>{
+    % \rtmark{1\large\checkmark}
+    % \textbf{{\color{objblue-box}\faCrosshairs}\,Research Objective \large\checkmark}
    \large
-   \textbf{Research Gap}
    \begin{itemize}
+      \item[\rtmark{1}] Corpus Creation
       \item Citation Network
-      \item Non-English
-      \item Research artifacts
+      \item Non-English Publications
+      \item Research Artifacts
    \end{itemize}
    }
 
@@ -1507,7 +1521,7 @@
    \begin{columns}
        \column{.4\textwidth}
         \begin{itemize}
-            \item \textbf{Big Picture}
+            \item \textbf{Research Tasks}
             \begin{itemize}
                 \item Basis for research
                 \begin{itemize}
