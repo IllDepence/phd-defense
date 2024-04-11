@@ -521,15 +521,15 @@
             \item \textbf{Research Task}\\Develop a method for creating large-scale, high quality ``base corpus''
             \item \textbf{Method}
             \begin{itemize}
-                \item Conversion of / IE from \LaTeX
-                \item Joint handling of text + references
+                \item \LaTeX{} as data source
+                \item Joint handling of text + references  % able to link citation markers
                 \item Reference parsing + linking to metadata records
             \end{itemize}
             \item \textbf{Results}
             \begin{itemize}
                 \item Corpus among 3 largest full-text corpora
-                \item More extensive, complete, less noisy data
-                \item State of the art reference linking
+                \item More extensive, complete, less noisy
+                \item State of the art citation network
             \end{itemize}
         \end{itemize}
         % \begin{itemize}
@@ -583,7 +583,7 @@
             \item \textbf{Reference linking}
             \begin{itemize}
                 \item Choice of target set
-                \item Parsing (\texttt{bbl}, not \texttt{bib})
+                \item Parsing {\color{contextgrey}(\texttt{bbl}, not \texttt{bib})}
                 \item Variance and information sparsity
             \end{itemize}
         \end{itemize}
@@ -653,28 +653,31 @@
    \end{frame}
 
    \begin{frame}{Corpus - Result}
-    % - stats
-    % - novel analyses
-    % - (usage by community?) — mby better at the very end
-
     \begin{table}
-     %\caption{Existing data sets}  %\\\small{(\#P.=Number of papers; Cit.\ cont.=Citation contexts; Ref.\ IDs=Reference IDs; CS=Computer Science, BM=Biomedicine, LS=Life Sciences, CL=Computer Linguistics)\\(\emph{extractable*} indicates that extraction might be error-prone due to papers only being available in PDF format)}}
-     %\label{tab:existing-data-sets}
+    % TODO: reduce to
+    %  - size
+    %  - cit. netw. acc
+    %  - cit. netw. completeness
+    %  mby
+    %  - cit. markers
+    %  - full text format
+    %  - disciplines
+
       \centering
       \begin{small}
      \begin{threeparttable}
      \begin{tabular}{lccccc}
      \toprule
-       Data set & \# Docs & Cit. markers & Disciplines & Full text & Linked \\
+       Data set & \# Docs & Cit. markers & Linked & Link Succ. & Link Acc. \\
        \midrule
        % capital Ms and lowercase ks (supposed to be like that)
-       ACL-ARC~\cite{Bird2008ACLARC} & 11 k & no & comp. ling. & PDF & $\times$ \\
-       ACL-AAN~\cite{Radev2013} & 18 k & no & comp. ling. & PDF & $\times$  \\
-       Scholarly Dataset 2~\cite{Sugiyama2015} & 100 k & no & CS & PDF & $\times$ \\
-       CiteSeerX~\cite{Caragea2014} / RefSeer~\cite{Huang2015fixed} &  1 M & ambiguous & mixed & 400 char excerpts & $\times$ \\
-       PMC OAS~\cite{pmc_oas} & 2.3 M & exact & biomedical & XML & mixed\tnote{a} \\
-       arXiv CS~\cite{Faerber2018LREC}   &  90 k & exact & CS & text & \checkmark \\
-       \textbf{unarXive}~\cite{Saier2020} & 1.2 M & exact & phys., maths, CS & text & \checkmark \\
+       ACL-ARC~\cite{Bird2008ACLARC} & 11 k & $\times$ & $\times$ & n/a & n/a\\
+       ACL-AAN~\cite{Radev2013} & 18 k & $\times$ & $\times$  & n/a & n/a \\
+       Scholarly Dataset 2~\cite{Sugiyama2015} & 100 k & $\times$ & $\times$ & n/a & n/a \\
+       CiteSeerX~\cite{Caragea2014} / RefSeer~\cite{Huang2015fixed} &  1 M & ambiguous & $\times$ & n/a & n/a \\
+       PMC OAS~\cite{pmc_oas} & \textbf{2.3 M} & exact & mixed\tnote{a} & - & - \\
+       arXiv CS~\cite{Faerber2018LREC}   &  90 k & exact & \checkmark & 39.3\% & - \\
+       \textbf{unarXive}~\cite{Saier2020} & 1.2 M & exact & \checkmark & \textbf{42.6\%} & \textbf{96\%} \\
        \bottomrule
      \end{tabular}
      \begin{tablenotes}
@@ -685,65 +688,30 @@
     \end{table}
    \end{frame}
 
-
    \begin{frame}{Corpus - Result (2022)}
-    \begin{table}
-      % \caption[Comparison of large data sets derived from paper full-texts]{Comparison of large data sets derived from paper full-texts ($^\dagger$Cit. network completeness is reported is two ways. ``general'': the whole data set; not directly comparable. ``compare'': for arXiv.org data from 1991--2020; directly comparable. $^\ddagger$References in the PMC-OAS are partially linked to a mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}. Therefore there is no single, comprehensive number for its completeness.}
-      % \label{tab:comparison}
-      \centering
-      \begin{small}
-     \begin{threeparttable}
-      \begin{tabular}{lcccccc}
-        \toprule
-        \ & \multicolumn{2}{c}{Source} & \multicolumn{2}{c}{\hphantom{wi}Citation Network\tnote{a}} & \ & \ \\
-        Data Set & Data & Format & general & compare & \# Docs & Disciplines \\
-        \midrule
-        CORE~\cite{core} & multiple & PDF & 0\% & - & $>$100 M & various \\
-        S2ORC (PDF)~\cite{Lo2020} & multiple & PDF & 69.4\% & - & 12 M & various \\
-        % (19.3+6.8)/(27.8+21.9) = 53% overall, 69.4% GROBID parses, 31.1% LaTeX parses
-        unarXive 2020~\cite{Saier2020} & arXiv.org & \LaTeX & 42.6\% & 42.6\% & 1.2 M & phys., maths, CS \\
-        \midrule
-        S2ORC (\LaTeX)~\cite{Lo2020} & arXiv.org & \LaTeX & 31.1\% & 31.1\% & 1.5 M & phys., maths, CS \\
-        arXMLiv~\cite{arXMLiv} & arXiv.org & \LaTeX & 0\% & 0\% & 1.6 M & phys., maths, CS \\
-        SciXGen~\cite{chen2021-scixgen} & arXiv.org & \LaTeX & 41.6\% & - & 205 k & CS \\
-        PMC-OAS~\cite{pmc_oas} & PubMed & XML & mixed\tnote{b} & - & \textbf{3.3 M} & \textbf{biomedical} \\
-        \textbf{unarXive 2022}~\cite{Saier2023unarXive} & arXiv.org & \LaTeX & 44.4\% & \textbf{44.4\%} & \textbf{1.9 M} & \textbf{phys., maths, CS} \\
-        % 0.4441 for 1991—2022, 0.4438 for 1991–2020
-        \bottomrule
-      \end{tabular}
-     \begin{tablenotes}
-        \item[a] {\color{contextgrey}``general'': all data; incomparable. ``compare'': arXiv.org data 1991--2020; directly comparable.}
-        \item[b] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
-      \end{tablenotes}
-    \end{threeparttable}
-      \end{small}
-    \end{table}
+     \begin{table}
+       \centering
+       \begin{small}
+      \begin{threeparttable}
+       \begin{tabular}{lcccccc}
+         \toprule
+         Data Set & \# Docs & Cit. markers & Linked & Link Succ. & Link Acc. \\
+         \midrule
+         arXMLiv~\cite{arXMLiv} & 1.6 M & exact & $\times$ & n/a & n/a \\
+         PMC-OAS~\cite{pmc_oas} & \textbf{3.3 M} & exact & mixed\tnote{a} & - & - \\
+         SciXGen~\cite{chen2021-scixgen} & 205 k & exact & \checkmark & 41.6\% & - \\
+         S2ORC (\LaTeX)~\cite{Lo2020} & 1.5 M & exact & \checkmark & 31.1\% & 92\% \\
+         \textbf{unarXive 2022}~\cite{Saier2023unarXive} & 1.9 M & exact & \checkmark & \textbf{44.4\%} & \textbf{96\%} \\
+         \bottomrule
+       \end{tabular}
+      \begin{tablenotes}
+         \item[a] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
+       \end{tablenotes}
+     \end{threeparttable}
+       \end{small}
+     \end{table}
    \end{frame}
 
-   \begin{frame}{Corpus - Link Correctness}
-    \begin{table}[tb]
-      \caption{Link correctness (n = 300)}
-      \centering
-      \begin{small}
-     \begin{threeparttable}
-    \begin{tabular}{c@{\hspace{0.1in}}c@{\hspace{0.1in}}c@{\hspace{0.1in}}c}
-    \toprule
-        Confidence level & Method\tnote{a} & Lower limit & Upper limit \\
-    \midrule
-        0.99 & Wilson & 0.9613 & 0.9975 \\\noalign{\smallskip}
-        \ & Jeffreys & 0.9666 & 0.9983 \\\noalign{\smallskip}
-        \hline\noalign{\smallskip}
-        0.95 & Wilson & 0.9710 & 0.9966 \\\noalign{\smallskip}
-        \ & Jeffreys & 0.9736 & 0.9972 \\
-        \bottomrule
-    \end{tabular}
-     \begin{tablenotes}
-        \item[a] {\color{contextgrey}Confidence interval given as Wilson score interval and Jeffreys interval~\cite{Brown2001}.}
-      \end{tablenotes}
-     \end{threeparttable}
-    \end{small}
-    \end{table}
-   \end{frame}
 
    \begin{frame}{Corpus - Citation Flow}
     \centering
@@ -1657,6 +1625,95 @@
            \onslide<11> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_1}
            \onslide<12> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_2}
        \end{overprint}
+   \end{frame}
+
+   \begin{frame}{Corpus - Result Full}
+    \begin{table}
+     %\caption{Existing data sets}  %\\\small{(\#P.=Number of papers; Cit.\ cont.=Citation contexts; Ref.\ IDs=Reference IDs; CS=Computer Science, BM=Biomedicine, LS=Life Sciences, CL=Computer Linguistics)\\(\emph{extractable*} indicates that extraction might be error-prone due to papers only being available in PDF format)}}
+     %\label{tab:existing-data-sets}
+      \centering
+      \begin{small}
+     \begin{threeparttable}
+     \begin{tabular}{lccccc}
+     \toprule
+       Data set & \# Docs & Cit. markers & Disciplines & Full text & Linked \\
+       \midrule
+       % capital Ms and lowercase ks (supposed to be like that)
+       ACL-ARC~\cite{Bird2008ACLARC} & 11 k & no & comp. ling. & PDF & $\times$ \\
+       ACL-AAN~\cite{Radev2013} & 18 k & no & comp. ling. & PDF & $\times$  \\
+       Scholarly Dataset 2~\cite{Sugiyama2015} & 100 k & no & CS & PDF & $\times$ \\
+       CiteSeerX~\cite{Caragea2014} / RefSeer~\cite{Huang2015fixed} &  1 M & ambiguous & mixed & 400 char excerpts & $\times$ \\
+       PMC OAS~\cite{pmc_oas} & 2.3 M & exact & biomedical & XML & mixed\tnote{a} \\
+       arXiv CS~\cite{Faerber2018LREC}   &  90 k & exact & CS & text & \checkmark \\
+       \textbf{unarXive}~\cite{Saier2020} & 1.2 M & exact & phys., maths, CS & text & \checkmark \\
+       \bottomrule
+     \end{tabular}
+     \begin{tablenotes}
+        \item[a] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
+      \end{tablenotes}
+    \end{threeparttable}
+      \end{small}
+    \end{table}
+   \end{frame}
+
+
+   \begin{frame}{Corpus - Result Full (2022)}
+    \begin{table}
+      % \caption[Comparison of large data sets derived from paper full-texts]{Comparison of large data sets derived from paper full-texts ($^\dagger$Cit. network completeness is reported is two ways. ``general'': the whole data set; not directly comparable. ``compare'': for arXiv.org data from 1991--2020; directly comparable. $^\ddagger$References in the PMC-OAS are partially linked to a mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}. Therefore there is no single, comprehensive number for its completeness.}
+      % \label{tab:comparison}
+      \centering
+      \begin{small}
+     \begin{threeparttable}
+      \begin{tabular}{lcccccc}
+        \toprule
+        \ & \multicolumn{2}{c}{Source} & \multicolumn{2}{c}{\hphantom{wi}Citation Network\tnote{a}} & \ & \ \\
+        Data Set & Data & Format & general & compare & \# Docs & Disciplines \\
+        \midrule
+        CORE~\cite{core} & multiple & PDF & 0\% & - & $>$100 M & various \\
+        S2ORC (PDF)~\cite{Lo2020} & multiple & PDF & 69.4\% & - & 12 M & various \\
+        % (19.3+6.8)/(27.8+21.9) = 53% overall, 69.4% GROBID parses, 31.1% LaTeX parses
+        unarXive 2020~\cite{Saier2020} & arXiv.org & \LaTeX & 42.6\% & 42.6\% & 1.2 M & phys., maths, CS \\
+        \midrule
+        S2ORC (\LaTeX)~\cite{Lo2020} & arXiv.org & \LaTeX & 31.1\% & 31.1\% & 1.5 M & phys., maths, CS \\
+        arXMLiv~\cite{arXMLiv} & arXiv.org & \LaTeX & 0\% & 0\% & 1.6 M & phys., maths, CS \\
+        SciXGen~\cite{chen2021-scixgen} & arXiv.org & \LaTeX & 41.6\% & - & 205 k & CS \\
+        PMC-OAS~\cite{pmc_oas} & PubMed & XML & mixed\tnote{b} & - & \textbf{3.3 M} & \textbf{biomedical} \\
+        \textbf{unarXive 2022}~\cite{Saier2023unarXive} & arXiv.org & \LaTeX & 44.4\% & \textbf{44.4\%} & \textbf{1.9 M} & \textbf{phys., maths, CS} \\
+        % 0.4441 for 1991—2022, 0.4438 for 1991–2020
+        \bottomrule
+      \end{tabular}
+     \begin{tablenotes}
+        \item[a] {\color{contextgrey}``general'': all data; incomparable. ``compare'': arXiv.org data 1991--2020; directly comparable.}
+        \item[b] {\color{contextgrey}No citation network due to mixed set of IDs (PubMed, MEDLINE, DOI)~\cite{Gipp2015}.}
+      \end{tablenotes}
+    \end{threeparttable}
+      \end{small}
+    \end{table}
+   \end{frame}
+
+   \begin{frame}{Corpus - Link Correctness Full}
+    \begin{table}[tb]
+      \caption{Link correctness (n = 300)}
+      \centering
+      \begin{small}
+     \begin{threeparttable}
+    \begin{tabular}{c@{\hspace{0.1in}}c@{\hspace{0.1in}}c@{\hspace{0.1in}}c}
+    \toprule
+        Confidence level & Method\tnote{a} & Lower limit & Upper limit \\
+    \midrule
+        0.99 & Wilson & 0.9613 & 0.9975 \\\noalign{\smallskip}
+        \ & Jeffreys & 0.9666 & 0.9983 \\\noalign{\smallskip}
+        \hline\noalign{\smallskip}
+        0.95 & Wilson & 0.9710 & 0.9966 \\\noalign{\smallskip}
+        \ & Jeffreys & 0.9736 & 0.9972 \\
+        \bottomrule
+    \end{tabular}
+     \begin{tablenotes}
+        \item[a] {\color{contextgrey}Confidence interval given as Wilson score interval and Jeffreys interval~\cite{Brown2001}.}
+      \end{tablenotes}
+     \end{threeparttable}
+    \end{small}
+    \end{table}
    \end{frame}
 
    \begin{frame}{Corpus - Stats}
