@@ -439,7 +439,7 @@
                \item \textbf{Corpus}
                \begin{itemize}
                    \item Challenges
-                   \item Solutions
+                   \item Methods
                    \item Resulting Corpus
                \end{itemize}
                \item {\color{contextgrey}\textbf{Citation Network}}
@@ -596,7 +596,7 @@
    \end{columns}
    \end{frame}
 
-   \begin{frame}{Corpus - Solutions}
+   \begin{frame}{Corpus - Methods}
     \centering
     \only<1>{
     \includegraphics[width=.7\textwidth]{imgs/data_set_generation_schema_simple.pdf}
@@ -606,7 +606,7 @@
     }
    \end{frame}
 
-   % \begin{frame}{Corpus - Solutions}
+   % \begin{frame}{Corpus - Methods}
    %  \begin{itemize}
    %      \item \textbf{Parsing}
    %      \begin{itemize}
@@ -668,7 +668,7 @@
      \begin{threeparttable}
      \begin{tabular}{lccccc}
      \toprule
-       Data set & \# Docs & Cit. markers & Linked & Link Succ. & Link Acc. \\
+       Data Set & \# Docs & Cit. Markers & Linked & Link Succ. & Link Acc. \\
        \midrule
        % capital Ms and lowercase ks (supposed to be like that)
        ACL-ARC~\cite{Bird2008ACLARC} & 11 k & $\times$ & $\times$ & n/a & n/a\\
@@ -695,7 +695,7 @@
       \begin{threeparttable}
        \begin{tabular}{lcccccc}
          \toprule
-         Data Set & \# Docs & Cit. markers & Linked & Link Succ. & Link Acc. \\
+         Data Set & \# Docs & Cit. Markers & Linked & Link Succ. & Link Acc. \\
          \midrule
          arXMLiv~\cite{arXMLiv} & 1.6 M & exact & $\times$ & n/a & n/a \\
          PMC-OAS~\cite{pmc_oas} & \textbf{3.3 M} & exact & mixed\tnote{a} & - & - \\
@@ -1009,7 +1009,7 @@
 
           ‌\\
           Note: all of the above evaluate\\
-          on GPT models only.
+          on \textbf{GPT models only}.
        \column{.475\textwidth}
            \begin{center}\includegraphics[width=0.9\textwidth]{imgs/llm_sciext}\\{\tiny\fullcite{Dunn2022}\par}\end{center}
    \end{columns}
@@ -1098,22 +1098,23 @@
    \begin{columns}
        \column{.375\textwidth}
            \begin{itemize}
-               \item No existing data sets\\$\rightarrow$ use unarXive ML/CV/CL/DL
+               \item No existing data sets\\$\rightarrow$ \textbf{use unarXive} ML/CV/CL/DL
                \item Annotation approach
                \begin{itemize}
                   %\item Guidelines based on ACL RD-TEC guidelines~\cite{Qasemizadeh2016}
                   \item Paragraph level, whole papers
                \end{itemize}
-               \item Extent
+               \item \textbf{Data Set Size}
                \begin{itemize}
                   \item 444 paragraphs
-                  \item 1,971 entities\\(1,134 a, 131 p, 662 v, 44 c)
+                  \item 1,971 entities % \\(1,134 a, 131 p, 662 v, 44 c)
                   \item 614 relations
                \end{itemize}
                \item IAA
                \begin{itemize}
                   \item 0.867 for entities
                   \item 0.737 for relations
+                  \item $\rightarrow$ \textbf{high quality}
                \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
