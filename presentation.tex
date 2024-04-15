@@ -1164,7 +1164,7 @@
                \item \textbf{Analysis}
                \begin{itemize}
                   \item Parameter: low performance
-                  \item Contexts: not predicted
+                  \item Contexts: not predicted\\~\\~\\~
                \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
@@ -1265,25 +1265,29 @@
            \begin{itemize}
                \item \textbf{Setting}
                \begin{itemize}
-                   \item Zero-/5-shot
+                   \item Zero-/Few-shot
                    \item Compare JSON w/ YAML variant
                \end{itemize}
-               \item \textbf{Results} (best ER / RE $\text{F}_1$\,[\%])
+               \item \textbf{Results} (best $\text{F}_1$\,[\%])
                \begin{itemize}
-                  \item Zero-shot: 37.4 / 7.8
-                  \item 5-shot: 44.0 / 6.1
+                  \item ER: 44.0 {\color{contextgrey}(37.4)}
+                  \item RE: 7.8 {\color{contextgrey}(6.1)}
                \end{itemize}
                \item \textbf{Analysis}
                \begin{itemize}
                   \item Very low RE performance
                   \item YAML: avg. +5\% in ER
-                  \item 5-shot: +27\% ER, +6\% RE
+                  % \item Few-shot: +27\% ER, +6\% RE
                   \item Format adherence\\+ entity hallucinations
                \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
         \begin{overlayarea}{\textwidth}{7cm}
         \only<2>{
+           \vspace{0.5em}
+           \centering\includegraphics[width=0.9\linewidth]{imgs/hyperpie_results}
+        }
+        \only<3>{
 
     \begin{table}
      \begin{small}
