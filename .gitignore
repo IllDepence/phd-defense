@@ -33,3 +33,4 @@
 *.xcf
 *.mtc1
 .~lock*
+.ipynb_checkpoints

@@ -1168,11 +1168,13 @@
                \end{itemize}
            \end{itemize}
        \column{.575\textwidth}
-        \begin{overlayarea}{\textwidth}{3cm}
+        \begin{overlayarea}{\textwidth}{7cm}
         \only<2>{
-           \includegraphics[width=\linewidth]{imgs/fine_tuned_eval}
+           \vspace{0.5em}
+           \centering\includegraphics[width=0.5\linewidth]{imgs/hyperpie_results_bert}
         }
         \only<3>{
+        \vspace{1.5em}
         \begin{table}
           \centering
           \caption[Ablation study results]{Ablation study results (model inputs are: T = BERT token embeddings, C = entity class embeddings, D = entity distance)}
@@ -1268,7 +1270,7 @@
                    \item Zero-/Few-shot
                    \item Compare JSON w/ YAML variant
                \end{itemize}
-               \item \textbf{Results} (best $\text{F}_1$\,[\%])
+               \item \textbf{Results} (best $\text{F}_1$\,[\%]) {\color{contextgrey}(zero-shot)}
                \begin{itemize}
                   \item ER: 44.0 {\color{contextgrey}(37.4)}
                   \item RE: 7.8 {\color{contextgrey}(6.1)}
@@ -1284,8 +1286,8 @@
        \column{.575\textwidth}
         \begin{overlayarea}{\textwidth}{7cm}
         \only<2>{
-           \vspace{0.5em}
-           \centering\includegraphics[width=0.9\linewidth]{imgs/hyperpie_results}
+           \vspace{0.25em}
+           \centering\includegraphics[width=\linewidth]{imgs/hyperpie_results_llm}
         }
         \only<3>{
 
@@ -1618,28 +1620,7 @@
         \end{infobox-map}
    \end{frame}
 
-   \begin{frame}
-       \frametitle<1>{Quality Dimensions}
-       \frametitle<2-3>{Quality Dimensions: Completeness}
-       \frametitle<4-5>{Quality Dimensions: Accuracy}
-       \frametitle<6-7>{Quality Dimensions: Relevance}
-       \frametitle<8-9>{Quality Dimensions: Comparability}
-       \frametitle<10-12>{Quality Dimensions: Timeliness}
-       \begin{overprint}
-           \onslide<1> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_x_x}
-           \onslide<2> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_0}
-           \onslide<3> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_1}
-           \onslide<4> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_0}
-           \onslide<5> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_1}
-           \onslide<6> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_0}
-           \onslide<7> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_1}
-           \onslide<8> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_0}
-           \onslide<9> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_1}
-           \onslide<10> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_0}
-           \onslide<11> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_1}
-           \onslide<12> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_2}
-       \end{overprint}
-   \end{frame}
+\section{Corpus}
 
    \begin{frame}{Corpus - Result Full}
     \begin{table}
@@ -1808,6 +1789,8 @@
     \end{table}
    \end{frame}
 
+\section{Artifact Parameters}
+
    \begin{frame}{Artifact Parameters - Task}
    \begin{itemize}
        \item \textbf{Task Type}
@@ -1952,6 +1935,11 @@
    \end{columns}
    \end{frame}
 
+
+   \begin{frame}{Artifact Parameters - Experiments: Fine-tuned models}
+           \centering\includegraphics[width=0.7\linewidth]{imgs/fine_tuned_eval}
+   \end{frame}
+
    \begin{frame}{Artifact Parameters - Experiments: LLMs}
     \begin{table}
      \begin{small}
@@ -2047,6 +2035,7 @@
        \includegraphics[width=0.75\textwidth]{imgs/llm_format_eval_mix}
    \end{frame}
 
+\section{Misc}
 
    \begin{frame}{Publications - primary}
     \begin{table}
@@ -2096,6 +2085,30 @@
 
     Additional publications (co-)authored leading up to and during the research period which are not a direct part of the dissertation, but nevertheless informed the overall research trajectory. Especially \cite{Saier2019} and \cite{Krause2021}, which constitute the results of the master's thesis preceding the doctoral research period, paved the way for the dissertation.
    \end{frame}
+
+   \begin{frame}
+       \frametitle<1>{Quality Dimensions}
+       \frametitle<2-3>{Quality Dimensions: Completeness}
+       \frametitle<4-5>{Quality Dimensions: Accuracy}
+       \frametitle<6-7>{Quality Dimensions: Relevance}
+       \frametitle<8-9>{Quality Dimensions: Comparability}
+       \frametitle<10-12>{Quality Dimensions: Timeliness}
+       \begin{overprint}
+           \onslide<1> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_x_x}
+           \onslide<2> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_0}
+           \onslide<3> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_0_1}
+           \onslide<4> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_0}
+           \onslide<5> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_1_1}
+           \onslide<6> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_0}
+           \onslide<7> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_2_1}
+           \onslide<8> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_0}
+           \onslide<9> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_3_1}
+           \onslide<10> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_0}
+           \onslide<11> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_1}
+           \onslide<12> \centering\includegraphics[width=0.4\textwidth]{imgs/schema_asp_4_2}
+       \end{overprint}
+   \end{frame}
+
 
    \begin{frame}{Limitations}
     \begin{itemize}
