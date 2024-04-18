@@ -970,59 +970,34 @@
 
 %TODO: consider merging related work slides
 
-   \begin{frame}{Artifact Parameters - Related Work: Fine-tuned models}
+   \begin{frame}{Artifact Parameters - Related Work}
    \begin{columns}
        \column{.475\textwidth}
            \begin{itemize}
-               \item SciERC dataset % (paragraph level)
+               \item Fine-tuned Models
                    \begin{itemize}
-                       \item SCIIE~\cite{luan2018scierc}
-                       \item PL-Marker~\cite{Ye2022}
-                       \item \textbf{$\rightarrow$ entity type overlap}
+                       \item SciERC dataset~\cite{luan2018scierc} % (paragraph level)
+                       \item SOTA: PL-Marker~\cite{Ye2022}\\\textbf{$\rightarrow$ entity type overlap}
                    \end{itemize}
-               \item [[~~...]]
-               % \item {\color{contextgrey}SciREX dataset} % (document level)
-               %     \begin{itemize}
-               %         {\item \color{contextgrey}TempGen~\cite{Huang2021} (only RE)}
-               %     \end{itemize}
-               % \item {\color{contextgrey}SemEval 2022 (math symb. to descr.)}
-               %     \begin{itemize}
-               %         \item {\color{contextgrey}JBNU-CCLab~\cite{Lee2022}}
-               %         \item {\color{contextgrey}AIFB~\cite{Popovic2022}}
-               %     \end{itemize}
-               \item SemEval 2021 (measurements)
+               \item LLMs
                    \begin{itemize}
-                       \item LIORI~\cite{Davletov2021}
-                       \item \textbf{$\rightarrow$ utilize mention pattern regularities}
+                       \item Mostly singular values/lists~\cite{Agrawal2022,Xie2023,Polak2023}
+                       \item Hierarchical~\cite{Dunn2022} (see right)\\\textbf{$\rightarrow$ data serialization format}
                    \end{itemize}
            \end{itemize}
-       \column{.475\textwidth}
-           \begin{center}\includegraphics[width=\textwidth]{imgs/scirex}\end{center}
-   \end{columns}
-   \end{frame}
-
-   \begin{frame}{Artifact Parameters - Related Work: LLMs}
-   \begin{columns}
-       \column{.475\textwidth}
-           \begin{itemize}
-               \item Medical science~\cite{Agrawal2022}
-                   \begin{itemize}
-                       \item singular values
-                       \item lists
-                   \end{itemize}
-               \item Material science~\cite{Xie2023,Polak2023,Dunn2022}
-                   \begin{itemize}
-                       \item singular values
-                       \item lists
-                       \item hierarchical~\cite{Dunn2022} (see right)\\\textbf{$\rightarrow$ data serialization format}
-                   \end{itemize}
-           \end{itemize}
+           \begin{overlayarea}{\textwidth}{4em}
+           \only<2>{
 
           ‌\\
-          Note: all of the above evaluate\\
-          on \textbf{GPT models only}.
+          {\color{contextgrey}Note: all related LLM work is\\
+          evaluated on \textbf{GPT models only}.}
+          }
+          \end{overlayarea}
        \column{.475\textwidth}
-           \begin{center}\includegraphics[width=0.9\textwidth]{imgs/llm_sciext}\\{\tiny\fullcite{Dunn2022}\par}\end{center}
+          \begin{overprint}
+              \onslide<1> \centering\includegraphics[width=\textwidth]{imgs/scirex}
+              \onslide<2> \centering\includegraphics[width=0.9\textwidth]{imgs/llm_sciext}
+          \end{overprint}
    \end{columns}
    \end{frame}
 
@@ -1938,6 +1913,31 @@
            \end{itemize}
        \column{.475\textwidth}
            \ 
+   \end{columns}
+   \end{frame}
+
+   \begin{frame}{Artifact Parameters - Related Work: LLMs}
+   \begin{columns}
+       \column{.475\textwidth}
+           \begin{itemize}
+               \item Medical science~\cite{Agrawal2022}
+                   \begin{itemize}
+                       \item singular values
+                       \item lists
+                   \end{itemize}
+               \item Material science~\cite{Xie2023,Polak2023,Dunn2022}
+                   \begin{itemize}
+                       \item singular values
+                       \item lists
+                       \item hierarchical~\cite{Dunn2022} (see right)\\\textbf{$\rightarrow$ data serialization format}
+                   \end{itemize}
+           \end{itemize}
+
+          ‌\\
+          Note: all of the above evaluate\\
+          on \textbf{GPT models only}.
+       \column{.475\textwidth}
+           \begin{center}\includegraphics[width=0.9\textwidth]{imgs/llm_sciext}\\{\tiny\fullcite{Dunn2022}\par}\end{center}
    \end{columns}
    \end{frame}
 
