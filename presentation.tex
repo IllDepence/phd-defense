@@ -2173,6 +2173,31 @@
        \end{overprint}
    \end{frame}
 
+   \begin{frame}{Hardest Challenges}
+       \begin{itemize}
+           \item general: \textbf{Reference Matching}\\
+                 {\color{contextgrey}solved how:}
+               \begin{itemize}
+                   \item solid base understanding/approach
+                   \begin{itemize}
+                        \item title+author fuzzy matching / blocking
+                        \item ref. parser \& target set choice
+                   \end{itemize}
+                   \item domain knowledge: APS journal DOI determinability
+                   \item model training: reference parser training on synthetic training data
+               \end{itemize}
+           \item most underestimated / labor intensive: \textbf{HyperPIE data set}\\
+                 {\color{contextgrey}details:}
+               \begin{itemize}
+                   \item conceptual: data scheme,  annotation guidelines
+                   \item technical: tool (offsets (UI vs backend, newlines)
+               \end{itemize}
+           \item most ``finicky'': \textbf{RE evaluation} with partial matches on entity level
+               % \begin{itemize}
+               %     \item  (i e. w/ multiple mentions) 
+               % \end{itemize}
+       \end{itemize}
+   \end{frame}
 
    \begin{frame}{Limitations}
     \begin{itemize}
