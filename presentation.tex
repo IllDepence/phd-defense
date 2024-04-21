@@ -1139,24 +1139,24 @@
            \vspace{0.5em}
            \centering\includegraphics[width=0.5\linewidth]{imgs/hyperpie_results_bert}
         }
-        \only<3>{
-        \vspace{1.5em}
-        \begin{table}
-          \centering
-          \caption[Ablation study results]{Ablation study results (model inputs are: T = BERT token embeddings, C = entity class embeddings, D = entity distance)}
-          \label{tab:finetunedablation}
-          \begin{tabular}{lccc}
-            \hline
-            Used & P [\%] & R [\%] & $\text{F}_1$\,[\%] \\
-            \hline
-            \textvisiblespace CD & 15.5 & 8.8 & 11.1 \\
-            T\textvisiblespace D & 16.6 & 29.8 & 19.6 \\
-            TC\textvisiblespace & 26.5 & 65.0 & 35.5 \\
-            TCD & \textbf{30.7} & \textbf{65.0} & \textbf{38.8} \\
-            \hline
-          \end{tabular}
-        \end{table}
-        }
+        % \only<3>{
+        % \vspace{1.5em}
+        % \begin{table}
+        %   \centering
+        %   \caption[Ablation study results]{Ablation study results (model inputs are: T = BERT token embeddings, C = entity class embeddings, D = entity distance)}
+        %   \label{tab:finetunedablation}
+        %   \begin{tabular}{lccc}
+        %     \hline
+        %     Used & P [\%] & R [\%] & $\text{F}_1$\,[\%] \\
+        %     \hline
+        %     \textvisiblespace CD & 15.5 & 8.8 & 11.1 \\
+        %     T\textvisiblespace D & 16.6 & 29.8 & 19.6 \\
+        %     TC\textvisiblespace & 26.5 & 65.0 & 35.5 \\
+        %     TCD & \textbf{30.7} & \textbf{65.0} & \textbf{38.8} \\
+        %     \hline
+        %   \end{tabular}
+        % \end{table}
+        % }
         \end{overlayarea}
    \end{columns}
    \end{frame}
@@ -1808,6 +1808,8 @@
        \includegraphics[width=0.7\textwidth]{imgs/unarXive_2022_schema}
    \end{frame}
 
+% TODO: add JCDL paper figs (CS rising + increasing cit density)
+
 \section{Artifact Parameters}
 
    \begin{frame}{Artifact Parameters - Task}
@@ -1982,6 +1984,24 @@
 
    \begin{frame}{Artifact Parameters - Experiments: Fine-tuned models}
            \centering\includegraphics[width=0.7\linewidth]{imgs/fine_tuned_eval}
+   \end{frame}
+
+   \begin{frame}{Artifact Parameters - Experiments: Fine-tuned models}
+        \begin{table}
+          \centering
+          \caption[Ablation study]{Ablation study (model inputs: T = BERT token embeddings, C = entity class embeddings, D = entity distance)}
+          \label{tab:finetunedablation}
+          \begin{tabular}{lccc}
+            \hline
+            Model Input & P [\%] & R [\%] & $\text{F}_1$\,[\%] \\
+            \hline
+            \textvisiblespace CD & 15.5 & 8.8 & 11.1 \\
+            T\textvisiblespace D & 16.6 & 29.8 & 19.6 \\
+            TC\textvisiblespace & 26.5 & 65.0 & 35.5 \\
+            TCD & \textbf{30.7} & \textbf{65.0} & \textbf{38.8} \\
+            \hline
+          \end{tabular}
+        \end{table}
    \end{frame}
 
    \begin{frame}{Artifact Parameters - Experiments: LLMs}
