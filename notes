@@ -13,6 +13,23 @@ A: Most referred to according to seemingly established reference literature.
    improvement, more general measures are needed which encapsulate the improvements
    of the individual chapters.
 
+Q: 11 KG dimensions in literature (Färber 2017):
+   - Intrinsic
+       - Accuracy ✔
+       - Trustworthiness
+       - Consistency
+   - Contextual
+       - Relevance ✔
+       - Completeness ✔
+       - Timeliness ✔
+   - Representational
+       - Ease of understanding
+       - Interoperability (~comparability) ✔
+   - Access
+       - Accessiblity
+       - License
+       - Interlinking
+
 Q: In terms of data quality, are your results good enough?
 A: As with data quality itself, good enough depends on the intended use case.
    Where general statements can be made to some degree (e.g. accuracy): yes,
