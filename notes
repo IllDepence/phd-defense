@@ -1,0 +1,37 @@
+# Anticipated Questions and Answers
+
+Q: Why exactly these five data quality dimensions?
+A: Most referred to according to seemingly established reference literature.
+   Also: Core/"real" measurement of progress is in each chapter, e.g. ref match
+   succ. rate, RE F1, etc. To allow for overall statement on data quality
+   improvement, more general measures are needed which encapsulate the improvements
+   of the individual chapters.
+
+Q: In terms of data quality, are your results good enough?
+A: As with data quality itself, good enough depends on the intended use case.
+   Where general statements can be made to some degree (e.g. accuracy): yes,
+   in other cases: achieved results (“at least”) represent a notable improvement.
+
+Q: Why LaTeX when there’s only 2M paper sources, compared to e.g. 100M PDFs in CORE,
+   despite *completeness* being one of the quality dimensions?
+A: Key point is to use more structured data sources than PDFs. LaTeX was a natural
+   choice for a computer scientist, but methods can be extended to JATS XMLs and
+   Word source files as well, which would cover most of what’s in CORE.
+
+Q: What would you do if you had 6 more months/one more year/...?
+A: See outlook slide
+
+Q: What was the hardest challenge and how did you overcome it?
+A: 1. General:
+      > Reference marching
+      Solved how:
+       - Solid base method (title, author; slightly fuzzy / blocking)
+       - Domain knowledge: phys rev DOIs
+       - ???: train ref parser on synthetic training data from bibtex refs
+   2. Most underestimated / labor intensive
+      > Manually annotated data set
+       - Conceptual: data scheme, annot guidelines
+       - Technical: tool (e.g. offsets (UI vs backend, newlines))
+   3. Most finicky:
+      > Relation extration partial match eval on entity level (i e. w/ multiple mentions)
+       - TODO: small sketch to show problem
